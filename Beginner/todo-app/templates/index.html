@@ -1,0 +1,21 @@
+{{define "content"}}
+<section>
+    <form action="/add" method="POST">
+        <input type="text" name="task" placeholder="Enter a new task" required>
+        <button type="submit">Add Task</button>
+    </form>
+</section>
+<section>
+    <ul>
+        {{range .}}
+        <li>
+            {{.Name}}
+            <form action="/delete" method="POST" style="display:inline;">
+                <input type="hidden" name="id" value="{{.ID}}">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+        {{end}}
+    </ul>
+</section>
+{{end}}

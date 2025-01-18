@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Post</title>
+</head>
+<body>
+    <h1>➕ Create New Post</h1>
+    <form action="/save" method="POST">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="content">Content:</label><br>
+        <textarea id="content" name="content" rows="5" cols="30" required></textarea><br><br>
+
+        <button type="submit">📤 Publish</button>
+    </form>
+    <br>
+    <a href="/">🏠 Back to Home</a>
+</body>
+</html>

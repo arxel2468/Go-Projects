@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>📝 Personal Blog</title>
+</head>
+<body>
+    <h1>📝 Personal Blog</h1>
+    <a href="/new">➕ Create New Post</a>
+    <hr>
+    {{range .}}
+        <h2>{{.Title}}</h2>
+        <p>{{.Content}}</p>
+        <hr>
+    {{else}}
+        <p>No posts yet! Start by creating one.</p>
+    {{end}}
+</body>
+</html>
