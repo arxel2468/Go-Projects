@@ -8,7 +8,7 @@ import (
     "os"
 )
 
-const apiKey = "8dab0ffcd477b3062918796bf2b1f017" // Replace with your OpenWeatherMap API key
+const apiKey = "YOUR API KEY" // Replace with your OpenWeatherMap API key
 
 type WeatherResponse struct {
     Name string `json:"name"`
