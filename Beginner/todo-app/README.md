@@ -21,7 +21,7 @@ A simple web-based To-Do List application built with Go to manage daily tasks. I
 Initialize Go Module
 
    ```bash
-   go mod init github.com/your-username/Go-Projects/Beginner/todo-app
+   go mod init github.com/arxel2468/Go-Projects/Beginner/todo-app
 Run the Application
 
   ```bash
