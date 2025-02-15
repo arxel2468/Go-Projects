@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package todo;
+
+option go_package = "github.com/yourusername/advanced-todo-app/proto/todo";
+
+// To-Do Item structure
+message TodoItem {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  string status = 4;  // "pending", "completed"
+  string created_at = 5;
+  string updated_at = 6;
+}
+
+// Request for creating a new To-Do
+message CreateTodoRequest {
+  string title = 1;
+  string description = 2;
+}
+
+// Response after creating a To-Do
+message CreateTodoResponse {
+  string id = 1;
+}
+
+// Request for fetching a To-Do item
+message GetTodoRequest {
+  string id = 1;
+}
+
+// Response containing To-Do details
+message GetTodoResponse {
+  TodoItem todo = 1;
+}
+
+// Request for updating a To-Do
+message UpdateTodoRequest {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  string status = 4;
+}
+
+// Response after updating
+message UpdateTodoResponse {
+  bool success = 1;
+}
+
+// Request for deleting a To-Do
+message DeleteTodoRequest {
+  string id = 1;
+}
+
+// Response after deletion
+message DeleteTodoResponse {
+  bool success = 1;
+}
+
+// Service definition
+service TodoService {
+  rpc CreateTodo (CreateTodoRequest) returns (CreateTodoResponse);
+  rpc GetTodo (GetTodoRequest) returns (GetTodoResponse);
+  rpc UpdateTodo (UpdateTodoRequest) returns (UpdateTodoResponse);
+  rpc DeleteTodo (DeleteTodoRequest) returns (DeleteTodoResponse);
+}
